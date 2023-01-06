@@ -1,186 +1,232 @@
 const request = require('request');
 
 function getCurrencies() {
-  const options = {
-    method: 'GET',
-    url: 'https://api.nanswap.com/v1/get-currencies',
-    json: true
-  };
+  return new Promise((resolve, reject) => {
+    const options = {
+      method: 'GET',
+      url: 'https://api.nanswap.com/v1/get-currencies',
+      json: true
+    };
 
-  request(options, function (error, response, body) {
-    if (error) throw new Error(error);
-
-    console.log(body);
+    request(options, function (error, response, body) {
+      if (error) {
+        reject(error);
+      } else {
+        resolve(JSON.stringify(body));
+      }
+    });
   });
 }
 
 function getEstimate(from, to, amount) {
-  const options = {
-    method: 'GET',
-    url: `https://api.nanswap.com/v1/get-estimate?from=${from}&to=${to}&amount=${amount}`,
-    json: true
-  };
+  return new Promise((resolve, reject) => {
+    const options = {
+      method: 'GET',
+      url: `https://api.nanswap.com/v1/get-estimate?from=${from}&to=${to}&amount=${amount}`,
+      json: true
+    };
 
-  request(options, function (error, response, body) {
-    if (error) throw new Error(error);
-
-    console.log(body);
+    request(options, function (error, response, body) {
+      if (error) {
+        reject(error);
+      } else {
+        resolve(JSON.stringify(body));
+      }
+    });
   });
 }
 
 function getEstimateReverse(from, to, amount) {
-  const options = {
-    method: 'GET',
-    url: `https://api.nanswap.com/v1/get-estimate-reverse?from=${from}&to=${to}&amount=${amount}`,
-    json: true
-  };
+  return new Promise((resolve, reject) => {
+    const options = {
+      method: 'GET',
+      url: `https://api.nanswap.com/v1/get-estimate-reverse?from=${from}&to=${to}&amount=${amount}`,
+      json: true
+    };
 
-  request(options, function (error, response, body) {
-    if (error) throw new Error(error);
-
-    console.log(body);
+    request(options, function (error, response, body) {
+      if (error) {
+        reject(error);
+      } else {
+        resolve(JSON.stringify(body));
+      }
+    });
   });
 }
 
 function getLimits(from, to) {
-  const options = {
-    method: 'GET',
-    url: `https://api.nanswap.com/v1/get-limits?from=${from}&to=${to}`,
-    json: true
-  };
+  return new Promise((resolve, reject) => {
+    const options = {
+      method: 'GET',
+      url: `https://api.nanswap.com/v1/get-limits?from=${from}&to=${to}`,
+      json: true
+    };
 
-  request(options, function (error, response, body) {
-    if (error) throw new Error(error);
-
-    console.log(body);
+    request(options, function (error, response, body) {
+      if (error) {
+        reject(error);
+      } else {
+        resolve(JSON.stringify(body));
+      }
+    });
   });
 }
 
 function createOrder(apiKey, from, to, amount, toAddress) {
-  const options = {
-    method: 'POST',
-    url: 'https://api.nanswap.com/v1/create-order',
-    headers: {
-      'nanswap-api-key': apiKey
-    },
-    body: {
-      from: from,
-      to: to,
-      amount: amount,
-      toAddress: toAddress
-    },
-    json: true
-  };
+  return new Promise((resolve, reject) => {
+    const options = {
+      method: 'POST',
+      url: 'https://api.nanswap.com/v1/create-order',
+      headers: {
+        'nanswap-api-key': apiKey
+      },
+      body: {
+        from: from,
+        to: to,
+        amount: amount,
+        toAddress: toAddress
+      },
+      json: true
+    };
 
-  request(options, function (error, response, body) {
-    if (error) throw new Error(error);
-
-    console.log(body);
+    request(options, function (error, response, body) {
+      if (error) {
+        reject(error);
+      } else {
+        resolve(JSON.stringify(body));
+      }
+    });
   });
 }
 
 function getOrder(id) {
-  const options = {
-    method: 'GET',
-    url: `https://api.nanswap.com/v1/get-order?id=${id}`,
-    json: true
-  };
+  return new Promise((resolve, reject) => {
+    const options = {
+      method: 'GET',
+      url: `https://api.nanswap.com/v1/get-order?id=${id}`,
+      json: true
+    };
 
-  request(options, function (error, response, body) {
-    if (error) throw new Error(error);
-
-    console.log(body);
+    request(options, function (error, response, body) {
+      if (error) {
+        reject(error);
+      } else {
+        resolve(JSON.stringify(body));
+      }
+    });
   });
 }
 
 function getCurrenciesPartner() {
-  const options = {
-    method: 'GET',
-    url: 'https://api.nanswap.com/v1/get-currencies-partner',
-    json: true
-  };
+  return new Promise((resolve, reject) => {
+    const options = {
+      method: 'GET',
+      url: 'https://api.nanswap.com/v1/get-currencies-partner',
+      json: true
+    };
 
-  request(options, function (error, response, body) {
-    if (error) throw new Error(error);
-
-    console.log(body);
+    request(options, function (error, response, body) {
+      if (error) {
+        reject(error);
+      } else {
+        resolve(JSON.stringify(body));
+      }
+    });
   });
 }
 
 function getEstimatePartner(from, to, amount, fromNetwork, toNetwork) {
-  const options = {
-    method: 'GET',
-    url: `https://api.nanswap.com/v1/get-estimate-partner?from=${from}&to=${to}&amount=${amount}&fromNetwork=${fromNetwork}&toNetwork=${toNetwork}`,
-    json: true
-  };
+  return new Promise((resolve, reject) => {
+    const options = {
+      method: 'GET',
+      url: `https://api.nanswap.com/v1/get-estimate-partner?from=${from}&to=${to}&amount=${amount}&fromNetwork=${fromNetwork}&toNetwork=${toNetwork}`,
+      json: true
+    };
 
-  request(options, function (error, response, body) {
-    if (error) throw new Error(error);
-
-    console.log(body);
+    request(options, function (error, response, body) {
+      if (error) {
+        reject(error);
+      } else {
+        resolve(JSON.stringify(body));
+      }
+    });
   });
 }
 
 function getLimitsPartner(from, to, fromNetwork, toNetwork) {
-  const options = {
-    method: 'GET',
-    url: `https://api.nanswap.com/v1/get-limits-partner?from=${from}&to=${to}&fromNetwork=${fromNetwork}&toNetwork=${toNetwork}`,
-    json: true
-  };
+  return new Promise((resolve, reject) => {
+    const options = {
+      method: 'GET',
+      url: `https://api.nanswap.com/v1/get-limits-partner?from=${from}&to=${to}&fromNetwork=${fromNetwork}&toNetwork=${toNetwork}`,
+      json: true
+    };
 
-  request(options, function (error, response, body) {
-    if (error) throw new Error(error);
-
-    console.log(body);
+    request(options, function (error, response, body) {
+      if (error) {
+        reject(error);
+      } else {
+        resolve(JSON.stringify(body));
+      }
+    });
   });
 }
 
-function createOrderPartner(from, fromNetwork, to, toNetwork, amount, toAddress) {
-  const options = {
-    method: 'POST',
-    url: 'https://api.nanswap.com/v1/create-order-partner',
-    body: {
-      from: from,
-      fromNetwork: fromNetwork,
-      to: to,
-      toNetwork: toNetwork,
-      amount: amount,
-      toAddress: toAddress
-    },
-    json: true
-  };
+function createOrderPartner(apiKey, from, to, amount, fromAddress, toAddress) {
+  return new Promise((resolve, reject) => {
+    const options = {
+      method: 'POST',
+      url: 'https://api.nanswap.com/v1/create-order-partner',
+      headers: {
+        'nanswap-api-key': apiKey
+      },
+      body: {
+        from: from,
+        to: to,
+        amount: amount,
+        fromAddress: fromAddress,
+        toAddress: toAddress
+      },
+      json: true
+    };
 
-  request(options, function (error, response, body) {
-    if (error) throw new Error(error);
-
-    console.log(body);
+    request(options, function (error, response, body) {
+      if (error) {
+        reject(error);
+      } else {
+        resolve(JSON.stringify(body));
+      }
+    });
   });
 }
 
 function getOrderPartner(id) {
-  const options = {
-    method: 'GET',
-    url: `https://api.nanswap.com/v1/get-order-partner?id=${id}`,
-    json: true
-  };
+  return new Promise((resolve, reject) => {
+    const options = {
+      method: 'GET',
+      url: `https://api.nanswap.com/v1/get-order-partner?id=${id}`,
+      json: true
+    };
 
-  request(options, function (error, response, body) {
-    if (error) throw new Error(error);
-
-    console.log(body);
+    request(options, function (error, response, body) {
+      if (error) {
+        reject(error);
+      } else {
+        resolve(JSON.stringify(body));
+      }
+    });
   });
 }
 
 module.exports = {
-getCurrencies: getCurrencies,
-getEstimate: getEstimate,
-getEstimateReverse: getEstimateReverse,
-getLimits: getLimits,
-createOrder: createOrder,
-getOrder: getOrder,
-getCurrenciesPartner: getCurrenciesPartner,
-getEstimatePartner: getEstimatePartner,
-getLimitsPartner: getLimitsPartner,
-createOrderPartner: createOrderPartner,
-getOrderPartner: getOrderPartner
+  getCurrencies: getCurrencies,
+  getEstimate: getEstimate,
+  getEstimateReverse: getEstimateReverse,
+  getLimits: getLimits,
+  createOrder: createOrder,
+  getOrder: getOrder,
+  getCurrenciesPartner: getCurrenciesPartner,
+  getEstimatePartner: getEstimatePartner,
+  getLimitsPartner: getLimitsPartner,
+  createOrderPartner: createOrderPartner,
+  getOrderPartner: getOrderPartner
 };
