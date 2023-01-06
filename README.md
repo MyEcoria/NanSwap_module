@@ -8,6 +8,11 @@ Ce module Node.js vous permet d'envoyer des requêtes à l'API Nanswap. Vous pou
 * Récupérer les limites de conversion de devises (`getLimits`) <br>
 * Créer une nouvelle commande de conversion de devises (`createOrder`) <br>
 * Récupérer les détails d'une commande de conversion de devises (`getOrder`) <br>
+* Cette fonction retourne la liste des devises prises en charge par les partenaires de NanSwap (`getCurrenciesPartner()`) <br>
+* Cette fonction retourne un devis de conversion de devises par les partenaires en utilisant les devises et le montant spécifiés en paramètres, ainsi que les réseaux de devises source et cible (`getEstimatePartner(from, to, amount, fromNetwork, toNetwork)`) <br>
+* Cette fonction retourne les limites de conversion de devises par les partenaires en utilisant les devises et les réseaux de devises spécifiés en paramètres (`getLimitsPartner(from, to, fromNetwork, toNetwork)`) <br>
+* Cette fonction envoie une commande de conversion de devises pour les partenaires en utilisant les devises et l'adresse de destination spécifiées en paramètres, ainsi que les réseaux de devises source et cible (`createOrderPartner(from, fromNetwork, to, toNetwork, amount, toAddress)`) <br>
+* Cette fonction retourne les détails de l'ordre de conversion de devises pour les partenaires en utilisant l'identifiant de l'ordre spécifié en paramètre (`getOrderPartner(id)`) <br>
 
 ## Installation
 Pour utiliser ce module, commencez par l'installer dans votre projet Node.js:
