@@ -170,3 +170,17 @@ function getOrderPartner(id) {
     console.log(body);
   });
 }
+
+module.exports = {
+getCurrencies: getCurrencies,
+getEstimate: getEstimate,
+getEstimateReverse: getEstimateReverse,
+getLimits: getLimits,
+createOrder: createOrder,
+getOrder: getOrder,
+getCurrenciesPartner: getCurrenciesPartner,
+getEstimatePartner: getEstimatePartner,
+getLimitsPartner: getLimitsPartner,
+createOrderPartner: createOrderPartner,
+getOrderPartner: getOrderPartner
+};
