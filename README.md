@@ -18,6 +18,7 @@ Ce module Node.js vous permet d'envoyer des requêtes à l'API Nanswap. Vous pou
 Pour utiliser ce module, commencez par l'installer dans votre projet Node.js:
 ```
 npm install nanswap 
+npm install request
 ```
 
 ## Utilisation
