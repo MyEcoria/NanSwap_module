@@ -107,5 +107,37 @@ Cette fonction permet de récupérer la liste des devises supportées par l'API 
 
 Exemple d'utilisation :
 ```
+nanswap.getCurrenciesPartner()
+```
 
+### `getEstimatePartner(from, to, amount, fromNetwork, toNetwork)`
+Récupère un devis de conversion de devises avec une plateforme partenaire en utilisant les devises, le montant et les plateformes spécifiés en paramètres.
+
+Exemple d'utilisation :
+```
+nanswap.getEstimatePartner('USDT', 'XNO', 100, 'ETH', '');
+```
+
+### `getLimitsPartner(from, to, fromNetwork, toNetwork)`
+Récupère les limites de conversion de devises avec une plateforme partenaire en utilisant les devises et les plateformes spécifiées en paramètres.
+
+Exemple d'utilisation :
+```
+nanswap.getLimitsPartner('USDT', 'XNO', 'BSC', '');
+```
+
+### `createOrderPartner(from, fromNetwork, to, toNetwork, amount, toAddress)`
+Crée une nouvelle commande de conversion de devises avec une plateforme partenaire en utilisant les devises, les plateformes et l'adresse de destination spécifiées en paramètres.
+
+Exemple d'utilisation :
+```
+nanswap.createOrderPartner('USDT', 'BSC', 'XNO', '', 10, 'nano_3rksbipm1b1g64gw6t36ufc77q7mtw1uybnto4xyn1e7ae5aikyknb9fg4su');
+```
+
+### `getOrderPartner(id)`
+La fonction getOrderPartner permet de récupérer les détails d'une commande de conversion de devises depuis une autre plateforme en utilisant son identifiant unique.
+
+Exemple d'utilisation :
+```
+nanswap.getOrderPartner('ebdbd588bbe362')
 ```
