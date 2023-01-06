@@ -40,12 +40,59 @@ nanswap.getCurrencies();
 ### `getEstimate(from, to, amount)`
 Cette fonction envoie une requête GET à l'API Nanswap pour récupérer un devis de conversion de devises.
 
-`from` : la devise source (par exemple, XNO pour Nano) <br>
-`to` : la devise cible (par exemple, BAN pour Banano) <br>
-`amount` : le montant à convertir <br>
+* `from` : la devise source (par exemple, XNO pour Nano) <br>
+* `to` : la devise cible (par exemple, BAN pour Banano) <br>
+* `amount` : le montant à convertir <br>
+
 Exemple d'utilisation :
 ```
 nanswap.getEstimate('XNO', 'BAN', 10);
 ```
 
-### `getEstimate(from, to, amount)`
+### `getEstimateReverse(from, to, amount)`
+Cette fonction envoie une requête GET à l'API Nanswap pour récupérer un devis de conversion de devises en sens inverse.
+
+* `from` : la devise cible (par exemple, BAN pour Banano)
+* `to` : la devise source (par exemple, XNO pour Nano)
+* `amount` : le montant cible à convertir
+
+Exemple d'utilisation :
+```
+nanswap.getEstimateReverse('XNO', 'BAN', 1650);
+```
+
+### `getLimits(from, to)`
+Cette fonction envoie une requête GET à l'API Nanswap pour récupérer les limites de conversion de devises.
+
+* `from` : la devise source (par exemple, XNO pour Nano)
+* `to` : la devise cible (par exemple, BAN pour Banano)
+
+Exemple d'utilisation :
+
+```
+nanswap.getLimits('XNO', 'BAN');
+```
+
+### `createOrder(apiKey, from, to, amount, toAddress)`
+Cette fonction envoie une requête POST à l'API Nanswap pour créer une nouvelle commande de conversion de devises.
+
+* `apiKey` : votre clé API Nanswap
+* `from` : la devise source (par exemple, XNO pour Nano)
+* `to` : la devise cible (par exemple, BAN pour Banano)
+* `amount` : le montant à convertir
+* `toAddress` : l'adresse de destination de la devise cible
+
+Exemple d'utilisation :
+```
+nanswap.createOrder('API_KEY', 'XNO', 'BAN', 10, 'ban_1f99kwxmkq4zquqwfs3qjznwjsq6s7t6pw6qhmnqmmiq5uofirzbtajhg63g');
+```
+
+### `getOrder(id)`
+Cette fonction envoie une requête GET à l'API Nanswap pour récupérer les détails d'une commande de conversion de devises. Cette fonction retourne les détails de la commande, tels que son statut et le montant converti.
+
+* `id` : l'ID de la commande à récupérer
+
+Exemple d'utilisation :
+```
+nanswap.getOrder('iIt8VosbQGV');
+```
