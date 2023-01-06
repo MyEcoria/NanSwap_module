@@ -101,3 +101,11 @@ Exemple d'utilisation :
 ```
 nanswap.getOrder('iIt8VosbQGV');
 ```
+
+### `getCurrenciesPartner()`
+Cette fonction permet de récupérer la liste des devises supportées par l'API de Nanswap pour les conversions avec des plateformes partenaires.
+
+Exemple d'utilisation :
+```
+
+```
