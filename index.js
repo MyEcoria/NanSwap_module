@@ -217,6 +217,79 @@ function getOrderPartner(id) {
   });
 }
 
+function getLastClaim(crypto) {
+  return new Promise((resolve, reject) => {
+    const options = {
+      method: 'GET',
+      url: `https://data.nanswap.com/get-last-claims?ticker=${crypto}`,
+      json: true
+    };
+
+    request(options, function (error, response, body) {
+      if (error) {
+        reject(error);
+      } else {
+        resolve(JSON.stringify(body));
+      }
+    });
+  });
+}
+
+function getStats() {
+  return new Promise((resolve, reject) => {
+    const options = {
+      method: 'GET',
+      url: `https://data.nanswap.com/get-stats`,
+      json: true
+    };
+
+    request(options, function (error, response, body) {
+      if (error) {
+        reject(error);
+      } else {
+        resolve(JSON.stringify(body));
+      }
+    });
+  });
+}
+
+function getMarket() {
+  return new Promise((resolve, reject) => {
+    const options = {
+      method: 'GET',
+      url: `https://data.nanswap.com/get-markets`,
+      json: true
+    };
+
+    request(options, function (error, response, body) {
+      if (error) {
+        reject(error);
+      } else {
+        resolve(JSON.stringify(body));
+      }
+    });
+  });
+}
+
+function getInviteStats(id) {
+  return new Promise((resolve, reject) => {
+    const options = {
+      method: 'GET',
+      url: `https://data.nanswap.com/get-invite-stats?paymentAddress=${id}`,
+      json: true
+    };
+
+    request(options, function (error, response, body) {
+      if (error) {
+        reject(error);
+      } else {
+        resolve(JSON.stringify(body));
+      }
+    });
+  });
+}
+
+
 module.exports = {
   getCurrencies: getCurrencies,
   getEstimate: getEstimate,
@@ -228,5 +301,9 @@ module.exports = {
   getEstimatePartner: getEstimatePartner,
   getLimitsPartner: getLimitsPartner,
   createOrderPartner: createOrderPartner,
-  getOrderPartner: getOrderPartner
+  getOrderPartner: getOrderPartner,
+  getLastClaim: getLastClaim,
+  getStats: getStats,
+  getMarket: getMarket,
+  getInviteStats: getInviteStats
 };
