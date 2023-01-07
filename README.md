@@ -1,6 +1,6 @@
-# Nanswap Client Node.js
+# Nanswap Client Node.js and Python
 
-Ce module Node.js vous permet d'envoyer des requêtes à l'API Nanswap. Vous pouvez utiliser ce module pour réaliser les opérations suivantes :
+Ce module Node.js et python vous permet d'envoyer des requêtes à l'API Nanswap. Vous pouvez utiliser ce module pour réaliser les opérations suivantes :
 
 * Récupérer la liste des devises supportées par l'API (`getCurrencies`) <br>
 * Récupérer un devis de conversion de devises (`getEstimate`) <br>
