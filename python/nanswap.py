@@ -58,3 +58,21 @@ def get_market():
 
 def get_invite_stats(id_):
     return requests.get(f'https://data.nanswap.com/get-invite-stats?paymentAddress={id_}').json()
+
+__all__ = [
+'get_currencies',
+'get_estimate',
+'get_estimate_reverse',
+'get_limits',
+'create_order',
+'get_order',
+'get_currencies_partner',
+'get_estimate_partner',
+'get_limits_partner',
+'create_order_partner',
+'get_order_partner',
+'get_last_claim',
+'get_stats',
+'get_market',
+'get_invite_stats',
+]
