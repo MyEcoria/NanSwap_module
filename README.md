@@ -142,3 +142,45 @@ Exemple d'utilisation :
 ```
 nanswap.getOrderPartner('ebdbd588bbe362')
 ```
+
+## Test
+
+```
+const apiKey = 'your-api-key';
+
+async function runDemo() {
+  // Get the list of available currencies
+  const currencies = await getCurrencies();
+  console.log('Currencies:', currencies);
+
+  // Get an estimate for a currency conversion
+  const estimate = await getEstimate('BTC', 'ETH', 0.1);
+  console.log('Estimate:', estimate);
+
+  // Get an estimate for a reverse currency conversion
+  const estimateReverse = await getEstimateReverse('ETH', 'BTC', 1);
+  console.log('Estimate (Reverse):', estimateReverse);
+
+  // Get the limits for a currency conversion
+  const limits = await getLimits('BTC', 'ETH');
+  console.log('Limits:', limits);
+
+  // Create an order for a currency conversion
+  const order = await createOrder(apiKey, 'BTC', 'ETH', 0.1, 'your-eth-address');
+  console.log('Order:', order);
+
+  // Get an existing order
+  const retrievedOrder = await getOrder(order.id);
+  console.log('Retrieved Order:', retrievedOrder);
+
+  // Get the list of available currencies for a partner
+  const partnerCurrencies = await getCurrenciesPartner();
+  console.log('Partner Currencies:', partnerCurrencies);
+
+  // Get an estimate for a currency conversion with a partner
+  const partnerEstimate = await getEstimatePartner(apiKey, 'BTC', 'ETH', 0.1, 'partner-id');
+  console.log('Partner Estimate:', partnerEstimate);
+}
+
+runDemo();
+```
